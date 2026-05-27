@@ -810,10 +810,15 @@ body {
   inset: 0;
   border-radius: 50%;
   background: transparent;
-  z-index: 2;
+  z-index: 9999;
   cursor: default;
   /* allow the overlay to receive pointer events so it can intercept contextmenu/drag */
   pointer-events: auto;
+  /* mobile: disable native touch callout (save image) */
+  -webkit-touch-callout: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Slight visual feedback if protection is triggered (temporary). */
