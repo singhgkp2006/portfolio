@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supriya Singh | Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio website for a Data Analyst showcasing projects, skills, and professional impact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-glow background-glow-1"></div>
+  <div class="background-glow background-glow-2"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="logo">
+        <span class="logo-first">Supriya</span>
+        <span class="logo-last">Singh</span>
+      </a>
+      <div class="nav-controls">
+        <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">Menu</button>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>
+          <!-- Sun icon -->
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="M4.93 4.93l1.41 1.41" />
+              <path d="M17.66 17.66l1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="M4.93 19.07l1.41-1.41" />
+              <path d="M17.66 6.34l1.41-1.41" />
+            </g>
+          </svg>
+          <!-- Moon icon -->
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container reveal" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Data Analyst | Business Intelligence</p>
+        <h1>Turning messy data into decisions that move the business.</h1>
+        <p class="lead">
+          I analyze operational and customer data to uncover trends, improve reporting,
+          and deliver insights teams can act on fast.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Let us connect</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Profile photo">
+        <div class="photo-ring">
+          <img src="assets/images/profile.jpg" alt="Supriya Singh profile photo" class="profile-photo" />
+        </div>
+      </aside>
+    </section>
+
+    <section class="section container reveal" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2>Analytical storytelling with measurable outcomes</h2>
+      </div>
+      <p>
+        I am a Data Analyst focused on translating complex datasets into strategic insights.
+        My experience spans SQL-based analysis, data visualization, and experimentation design.
+        I enjoy collaborating with cross-functional teams to define metrics, identify growth opportunities,
+        and build reliable reporting systems.
+      </p>
+    </section>
+
+    <section class="section section-alt" id="skills">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Core Toolkit</p>
+          <h2>Skills that bridge analysis and execution</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="card">
+            <h3>Data Analysis</h3>
+            <p>SQL, Python, Excel, Exploratory Data Analysis, Statistical Testing</p>
+          </article>
+          <article class="card">
+            <h3>Visualization</h3>
+            <p>Power BI, Tableau, Looker Studio, KPI Dashboards, Storyboarding</p>
+          </article>
+          <article class="card">
+            <h3>Data Engineering Basics</h3>
+            <p>Data Cleaning, ETL workflows, API integration, Data modeling</p>
+          </article>
+          <article class="card">
+            <h3>Business Focus</h3>
+            <p>Funnel analysis, Cohort analysis, Forecasting support, Stakeholder reporting</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">Featured Work</p>
+        <h2>Portfolio Projects</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Customer Churn Prediction Study</h3>
+          <p>
+            Built a churn analysis model and dashboard to identify high-risk customer cohorts.
+            Recommendations helped reduce monthly churn by 8% in pilot regions.
+          </p>
+          <p class="stack">Python, SQL, Power BI</p>
+        </article>
+
+        <article class="project-card">
+          <h3>E-commerce Conversion Funnel</h3>
+          <p>
+            Audited conversion drop-offs from landing to checkout and introduced segmented reporting.
+            Insights drove UX changes that improved conversion by 14%.
+          </p>
+          <p class="stack">SQL, Tableau, A/B Testing</p>
+        </article>
+
+        <article class="project-card">
+          <h3>Finance KPI Automation</h3>
+          <p>
+            Replaced manual weekly spreadsheets with automated ETL + dashboard refresh workflows.
+            Reporting cycle time dropped from 2 days to 3 hours.
+          </p>
+          <p class="stack">Python, Excel, Looker Studio</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="experience">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>Recent roles and contributions</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <h3>Data Analyst | InsightBridge Analytics</h3>
+            <p class="meta">2023 - Present</p>
+            <p>Designed executive dashboards and led monthly performance deep-dives for marketing and product teams.</p>
+          </article>
+          <article>
+            <h3>Junior Data Analyst | MarketPulse Labs</h3>
+            <p class="meta">2021 - 2023</p>
+            <p>Supported pricing and retention analysis, built reusable SQL templates, and improved data documentation quality.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="education">
+      <div class="section-heading">
+        <p class="eyebrow">Education</p>
+        <h2>Academic background</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <h3>Institute of Technology and Management</h3>
+          <p class="location"><em>GIDA, Gorakhpur</em></p>
+          <p class="meta">2023 - 2027</p>
+          <p>Pursuing undergraduate studies with a focus on analytical thinking, data interpretation, and business problem solving.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="contact">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>Open to Data Analyst opportunities</h2>
+      </div>
+      <p>
+        Interested in collaborating or hiring? Reach out and I will respond within 24 hours.
+      </p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/supriya-singh-6359a5346/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/singhgkp2006" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Supriya Singh. Built with curiosity and clean data.</p>
+      <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
