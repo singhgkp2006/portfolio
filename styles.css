@@ -119,11 +119,11 @@ body {
   width: 40%;
   height: 120%;
   transform: skewX(-22deg);
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.70) 50%, transparent 100%);
-  mix-blend-mode: screen;
-  opacity: 0.9;
+  /* remove flashing shine: keep pseudo element inactive */
+  background: none;
+  mix-blend-mode: normal;
+  opacity: 0;
   pointer-events: none;
-  animation: logo-shine 3.2s linear infinite;
 }
 
 @keyframes logo-shine {
@@ -168,9 +168,9 @@ body {
 }
 
 @keyframes logo-bob {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -5px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 /* Continuous subtle bob for the logo name. Respected by prefers-reduced-motion. */
@@ -602,6 +602,28 @@ body {
     width: 36px;
     height: 32px;
     font-size: 0.95rem;
+  }
+}
+
+/* Prevent back-to-top overlapping footer text on small screens
+   Use a flex layout inside the footer container and let the button sit
+   inline (static) so it aligns to the right without overlapping. */
+@media (max-width: 520px) {
+  .site-footer .container {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .site-footer .container p {
+    margin: 0;
+    flex: 1 1 auto;
+  }
+
+  .site-footer .back-to-top {
+    position: static;
+    transform: none;
+    margin-left: auto;
   }
 }
 
