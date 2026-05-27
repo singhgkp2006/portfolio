@@ -113,3 +113,46 @@ window.addEventListener('load', () => {
 // native browser features (selection, context menu, keyboard shortcuts).
 // We keep protections non-intrusive (CSS watermark over profile image).
 
+// --- Scoped copy/download protections ---
+// Prevent copying from elements marked with `.no-copy` and intercept
+// image drag / contextmenu on the profile photo + overlay.
+
+document.addEventListener('copy', (e) => {
+  try {
+    const sel = document.getSelection();
+    if (!sel || sel.isCollapsed) return;
+    let node = sel.anchorNode;
+    // if text node, get parent element
+    if (node && node.nodeType === 3) node = node.parentElement;
+    while (node) {
+      if (node.classList && node.classList.contains('no-copy')) {
+        e.preventDefault();
+        // brief visual feedback
+        node.classList.add('flash');
+        setTimeout(() => node.classList.remove('flash'), 300);
+        return;
+      }
+      node = node.parentElement;
+    }
+  } catch (err) {
+    // fail silently
+  }
+});
+
+// Profile photo protections
+const profileImg = document.querySelector('.profile-photo');
+const imgOverlay = document.querySelector('.img-protect');
+if (profileImg) {
+  profileImg.setAttribute('draggable', 'false');
+  profileImg.addEventListener('dragstart', (ev) => ev.preventDefault());
+  profileImg.addEventListener('contextmenu', (ev) => ev.preventDefault());
+}
+if (imgOverlay) {
+  imgOverlay.addEventListener('contextmenu', (ev) => ev.preventDefault());
+  imgOverlay.addEventListener('dragstart', (ev) => ev.preventDefault());
+  // also intercept right-click (mouse) down before native menu
+  imgOverlay.addEventListener('mousedown', (ev) => {
+    if (ev.button === 2) ev.preventDefault();
+  });
+}
+
