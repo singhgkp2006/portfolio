@@ -154,5 +154,20 @@ if (imgOverlay) {
   imgOverlay.addEventListener('mousedown', (ev) => {
     if (ev.button === 2) ev.preventDefault();
   });
+  // intercept touch / pointer events to prevent long-press save on mobile
+  imgOverlay.addEventListener('touchstart', (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+  }, { passive: false });
+  imgOverlay.addEventListener('touchend', (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+  }, { passive: false });
+  imgOverlay.addEventListener('pointerdown', (ev) => {
+    if (ev.pointerType === 'touch') {
+      ev.preventDefault();
+      ev.stopPropagation();
+    }
+  });
 }
 
