@@ -1,4 +1,3 @@
-const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const homeLink = document.querySelector(".logo");
@@ -42,19 +41,9 @@ if (themeToggle) {
   });
 }
 
-if (menuToggle && nav) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-}
-
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    if (menuToggle) {
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
+    // anchor navigation is handled naturally by the browser
   });
 });
 
@@ -62,12 +51,6 @@ if (homeLink) {
   homeLink.addEventListener("click", (event) => {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
-    if (nav) {
-      nav.classList.remove("open");
-    }
-    if (menuToggle) {
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
   });
 }
 
@@ -126,28 +109,7 @@ window.addEventListener('pageshow', (e) => {
 window.addEventListener('load', () => {
   setTimeout(ensureTopOnLoad, 0);
 });
-
-/* --- Anti-copy / anti-download protections (best-effort) --- */
-// Prevent keyboard copy and cut
-document.addEventListener('copy', (e) => e.preventDefault());
-document.addEventListener('cut', (e) => e.preventDefault());
-
-// Prevent context menu (right-click / long-press)
-document.addEventListener('contextmenu', (e) => {
-  e.preventDefault();
-});
-
-// Prevent text selection start
-document.addEventListener('selectstart', (e) => {
-  e.preventDefault();
-});
-
-// Prevent dragging images to download
-document.addEventListener('dragstart', (e) => {
-  if (e.target && e.target.nodeName === 'IMG') {
-    e.preventDefault();
-  }
-});
-
-// Also block touch-and-hold callouts on iOS (best-effort via CSS already applied)
+// Note: previous aggressive anti-copy handlers were removed to preserve
+// native browser features (selection, context menu, keyboard shortcuts).
+// We keep protections non-intrusive (CSS watermark over profile image).
 
