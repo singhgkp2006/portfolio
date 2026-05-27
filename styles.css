@@ -793,3 +793,32 @@ body {
 /* Slightly smoother hover transitions */
 .site-nav a, .contact-links a, .btn { transition: transform 180ms cubic-bezier(.2,.8,.2,1), color 180ms ease; }
 
+/* --- Content protection helpers (scoped, non-invasive) --- */
+/* Apply the `no-copy` class to containers that should discourage selection/copy. */
+.no-copy,
+.no-copy * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Overlay that sits on top of the profile photo to intercept right-click/save/drag.
+   It's transparent and only placed over the image area. */
+.img-protect {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 2;
+  cursor: default;
+  /* allow the overlay to receive pointer events so it can intercept contextmenu/drag */
+  pointer-events: auto;
+}
+
+/* Slight visual feedback if protection is triggered (temporary). */
+.no-copy.flash {
+  box-shadow: 0 0 0 3px rgba(255,82,82,0.08);
+  transition: box-shadow 200ms ease;
+}
+
