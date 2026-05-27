@@ -388,6 +388,21 @@ body {
   background: var(--card);
 }
 
+/* subtle outline/tertiary button for resume/download actions */
+.btn-outline {
+  border: 1.25px dashed color-mix(in srgb, var(--accent) 44%, var(--border));
+  color: var(--accent-2);
+  background: transparent;
+  padding: 0.78rem 1rem;
+}
+
+.contact-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
 .hero-panel {
   display: grid;
   justify-items: center;
@@ -543,7 +558,7 @@ body {
   gap: 0.9rem;
 }
 
-.contact-links a {
+.contact-links a:not(.btn) {
   color: var(--accent);
   font-weight: 700;
   text-decoration: none;
