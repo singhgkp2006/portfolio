@@ -692,6 +692,45 @@ body {
   }
 }
 
+/* Mobile: make nav links appear as stacked full-width buttons inside the menu */
+@media (max-width: 760px) {
+  .site-nav a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    font-weight: 700;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    transform: none;
+  }
+}
+
+/* Disable text selection across the site to discourage copying */
+html, body, .container, main, header, footer {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Prevent image dragging and touch callouts */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+}
+
 /* Additional responsive and performance improvements */
 
 /* Reduce heavy visual effects and shadows on small screens for performance */
