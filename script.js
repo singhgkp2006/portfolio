@@ -126,3 +126,28 @@ window.addEventListener('pageshow', (e) => {
 window.addEventListener('load', () => {
   setTimeout(ensureTopOnLoad, 0);
 });
+
+/* --- Anti-copy / anti-download protections (best-effort) --- */
+// Prevent keyboard copy and cut
+document.addEventListener('copy', (e) => e.preventDefault());
+document.addEventListener('cut', (e) => e.preventDefault());
+
+// Prevent context menu (right-click / long-press)
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+});
+
+// Prevent text selection start
+document.addEventListener('selectstart', (e) => {
+  e.preventDefault();
+});
+
+// Prevent dragging images to download
+document.addEventListener('dragstart', (e) => {
+  if (e.target && e.target.nodeName === 'IMG') {
+    e.preventDefault();
+  }
+});
+
+// Also block touch-and-hold callouts on iOS (best-effort via CSS already applied)
+
